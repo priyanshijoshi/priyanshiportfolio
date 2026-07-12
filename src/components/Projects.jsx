@@ -2,19 +2,19 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaWater, FaDumbbell } from 'react-icons/fa';
+import { FaWater, FaDumbbell, FaPalette } from 'react-icons/fa';
 import { HiSparkles, HiShoppingBag } from 'react-icons/hi';
 
 const Projects = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
   const [filter, setFilter] = useState('all');
 
-  const categories = ['all', 'UI/UX', 'Branding', 'Web Design', 'Mobile App'];
+  const categories = ['all', 'UI/UX', 'Graphic Design', 'Branding', 'Web Design', 'Mobile App'];
 
   const projects = [
     {
       title: 'Digital Learning Platform UI',
-      desc: 'A modern and engaging e-learning platform UI designed to deliver seamless learning experiences with intuitive navigation and immersive visuals.',
+      desc: 'A modern and engaging e-learning e-learning platform UI designed to deliver seamless learning experiences with intuitive navigation and immersive visuals.',
       tags: ['UI/UX', 'Figma', 'EdTech'],
       category: 'UI/UX',
       color: 'from-cyan-500 to-blue-500',
@@ -38,6 +38,24 @@ const Projects = () => {
       color: 'from-orange-500 to-pink-500',
       icon: <HiShoppingBag />,
       live: 'https://www.figma.com/design/rfxXH44ul1nUBbHt4sLsTW/Untitled?t=nn9X5X6y66LgQAGm-0',
+    },
+    {
+      title: 'Phenava & Fashion Osis Brand Graphics',
+      desc: 'Created ongoing brand graphics and managed social media handles for two fashion clients using Photoshop and Canva.',
+      tags: ['Freelance', 'Photoshop', 'Canva', 'Branding', 'Fashion'],
+      category: 'Graphic Design',
+      color: 'from-pink-500 to-rose-600',
+      icon: <FaPalette />,
+      live: null,
+    },
+    {
+      title: 'Real Estate Brand Graphics',
+      desc: 'Designed marketing and social media graphics for a real estate client using Photoshop and Canva.',
+      tags: ['Freelance', 'Photoshop', 'Canva', 'Branding', 'Real Estate'],
+      category: 'Graphic Design',
+      color: 'from-yellow-500 to-amber-600',
+      icon: <FaPalette />,
+      live: null,
     },
   ];
 
@@ -97,7 +115,7 @@ const Projects = () => {
                   <span className="relative z-10">{project.icon}</span>
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
-                <div className="p-6">
+                <div className="p-6 text-left">
                   <h3 className="text-xl font-bold mb-2 text-white group-hover:text-cyan-400 transition-colors">{project.title}</h3>
                   <p className="text-white/60 text-sm mb-3">{project.desc}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -105,18 +123,20 @@ const Projects = () => {
                       <span key={tag} className="text-xs px-2 py-1 rounded-full bg-white/5 text-cyan-400">{tag}</span>
                     ))}
                   </div>
-                  <div className="flex gap-3">
-                    <motion.a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex-1 px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-medium text-center"
-                    >
-                      Live Preview
-                    </motion.a>
-                  </div>
+                  {project.live && (
+                    <div className="flex gap-3">
+                      <motion.a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex-1 px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-medium text-center"
+                      >
+                        Live Preview
+                      </motion.a>
+                    </div>
+                  )}
                 </div>
               </div>
             </motion.div>

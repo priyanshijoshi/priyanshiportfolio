@@ -10,37 +10,25 @@ const Timeline = () => {
   const experiences = [
     {
       company: 'Athenura',
-      role: 'UI/UX Designer',
-      duration: '2025 - 2026',
+      role: 'Graphic Designer & UI/UX Designer',
+      duration: '2025 - Present',
       achievements: [
-        'Designed the Radhyam Music Streaming Platform with immersive UI focused on smooth navigation and content discoverability.',
-        'Created the Athenura Student Portal dashboard with scalable and user-friendly workflows for students.',
-        'Built modern interfaces combining aesthetics, accessibility, and high-performance user experiences.',
-        'Collaborated with developers and product teams to transform concepts into interactive digital products.',
+        'Design UI/UX for company products in Figma, including a billing system dashboard, a digital learning platform, and an Instagram auto-DM automation tool.',
+        'Design and manage visual content for Athenura\'s social media pages, maintaining consistent brand identity.',
+        'Lead and mentor a team of 20+ designers, guiding design standards, workflows, and quality of output.',
       ],
       color: 'from-cyan-500 to-blue-500',
     },
     {
-      company: 'GlideIn Studios',
-      role: 'Creative-Tech Founder & Designer',
+      company: 'Glide.in Studios',
+      role: 'Freelance Graphic Designer',
       duration: '2024 - Present',
       achievements: [
-        'Successfully launched and scaled a creative-tech agency delivering branding and UI/UX solutions.',
-        'Designed futuristic interfaces and digital identities for startups and modern businesses.',
-        'Managed client projects from wireframing and prototyping to final visual execution.',
+        'Deliver end-to-end graphic design for multiple client brands spanning fashion, tech, real estate, and travel.',
+        'Designed 20+ social media campaigns and marketing assets, contributing to increased brand engagement.',
+        'Managed design and social media handles for fashion clients including Phenava and Fashion Osis, using Photoshop and Canva.',
       ],
       color: 'from-purple-500 to-pink-500',
-    },
-    {
-      company: 'AI Interview Portal',
-      role: 'Full Stack & UI/UX Developer',
-      duration: '2024 - 2025',
-      achievements: [
-        'Developed a high-performance AI Interview Portal with dynamic analytics and automated evaluation systems.',
-        'Integrated intuitive dashboards and responsive interfaces for enhanced user engagement.',
-        'Worked on backend systems using Python, Django, and SQL alongside modern UI/UX workflows.',
-      ],
-      color: 'from-orange-500 to-red-500',
     },
   ];
 

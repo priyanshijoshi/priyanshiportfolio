@@ -65,7 +65,7 @@ const Hero = () => {
                                 className="mb-6 text-cyan-400 font-mono text-sm tracking-wider flex items-center gap-2 justify-center lg:justify-start"
                             >
                                 <HiSparkles className="text-cyan-400" />
-                                UI/UX DESIGNER & CREATIVE DEVELOPER
+                                GRAPHIC & UI/UX DESIGNER
                                 <HiSparkles className="text-cyan-400" />
                             </motion.div>
 
@@ -86,7 +86,7 @@ const Hero = () => {
                                 transition={{ delay: 0.5 }}
                                 className="text-xl text-white/70 max-w-2xl mb-10"
                             >
-                                I craft immersive digital experiences that blend creativity, strategy, and cutting-edge technology into visually stunning and user-focused products.                            </motion.p>
+                                Graphic Designer with 1+ year of experience creating brand and social media graphics across fashion, tech, real estate, and travel industries, and expanding into UI/UX design. Currently designing product interfaces in Figma while leading and mentoring a 20-member design team at Athenura.                            </motion.p>
 
                             <motion.div
                                 initial={{ opacity: 0 }}
