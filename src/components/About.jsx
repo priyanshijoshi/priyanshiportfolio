@@ -10,9 +10,9 @@ const About = () => {
 
     const skills = [
         { name: 'Figma', level: 95, color: 'from-purple-500 to-pink-500' },
-        { name: 'Photoshop', level: 90, color: 'from-blue-500 to-cyan-500' },
-        { name: 'Canva', level: 92, color: 'from-cyan-500 to-teal-500' },
-        { name: 'Adobe XD', level: 85, color: 'from-pink-500 to-orange-500' },
+        { name: 'Canva', level: 95, color: 'from-cyan-500 to-teal-500' },
+        { name: 'Photoshop', level: 80, color: 'from-blue-500 to-cyan-500' },
+        { name: 'Adobe XD', level: 70, color: 'from-pink-500 to-orange-500' },
     ];
 
     const designExpertise = ['Branding', 'Typography', 'Layout Design', 'UI/UX Design', 'Print Design', 'Motion Graphics (learning)'];
@@ -102,11 +102,11 @@ const About = () => {
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
                         <p className="text-white/80 text-lg leading-relaxed mb-6">
-                            I'm a passionate Graphic & UI/UX Designer with over a year of professional experience crafting brand systems, social media campaigns, and marketing assets, while expanding my expertise into digital product design.
+                            Graphic Designer and UI/UX Designer with hands-on experience across the full UX process (user research, wireframing, prototyping, usability testing) and 1+ year of experience creating brand and social media graphics.
                         </p>
 
                         <p className="text-white/60 mb-8">
-                            Currently, I lead and mentor a design team of 20+ members at Athenura, setting standards for workflow and creative output. I design responsive interfaces in Figma, such as automated dashboard tools and e-learning platforms, while delivering freelance graphic campaigns for clients in industries like fashion, real estate, travel, and technology.
+                            Currently designing product interfaces in Figma, building design systems, and leading a 20-member design team at Athenura, while delivering freelance graphic campaigns across fashion, tech, real estate, and travel industries.
                         </p>
 
                         {/* Skills with animated bars */}

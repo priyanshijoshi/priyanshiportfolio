@@ -86,7 +86,8 @@ const Hero = () => {
                                 transition={{ delay: 0.5 }}
                                 className="text-xl text-white/70 max-w-2xl mb-10"
                             >
-                                Graphic Designer with 1+ year of experience creating brand and social media graphics across fashion, tech, real estate, and travel industries, and expanding into UI/UX design. Currently designing product interfaces in Figma while leading and mentoring a 20-member design team at Athenura.                            </motion.p>
+                                Graphic Designer and UI/UX Designer with hands-on experience across the full UX process (user research, wireframing, prototyping, usability testing) and 1+ year of experience creating brand and social media graphics. Currently designing product interfaces in Figma, building design systems, and leading a 20-member design team at Athenura, while delivering freelance graphic campaigns across fashion, tech, real estate, and travel industries.
+                            </motion.p>
 
                             <motion.div
                                 initial={{ opacity: 0 }}
