@@ -1,14 +1,19 @@
 /* src/index.css */
 @import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
 @layer base {
   html {
     scroll-behavior: smooth;
     cursor: none;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
   
   body {
-    @apply bg-black text-white overflow-x-hidden;
+    @apply bg-[#F8F9FA] text-[#1A1A1A] dark:bg-[#0B0F19] dark:text-white/80 overflow-x-hidden;
     font-family: 'Inter', sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
   }
   
   /* Custom cursor */
@@ -16,23 +21,31 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: rgba(0, 255, 255, 0.3);
+    background: rgba(6, 182, 212, 0.12);
     backdrop-filter: blur(4px);
-    border: 1px solid rgba(0, 255, 255, 0.8);
+    border: 1px solid rgba(6, 182, 212, 0.4);
     position: fixed;
     pointer-events: none;
     z-index: 9999;
-    transition: transform 0.1s ease;
+    transition: transform 0.1s ease, background-color 0.5s ease, border-color 0.5s ease;
+  }
+  .dark .custom-cursor {
+    background: rgba(0, 255, 255, 0.3);
+    border: 1px solid rgba(0, 255, 255, 0.8);
   }
   
   .cursor-dot {
     width: 8px;
     height: 8px;
-    background: cyan;
+    background: #06b6d4;
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
     z-index: 9999;
+    transition: background-color 0.5s ease;
+  }
+  .dark .cursor-dot {
+    background: cyan;
   }
   
   /* Scroll progress bar */
@@ -41,40 +54,67 @@
     top: 0;
     left: 0;
     height: 3px;
-    background: linear-gradient(90deg, cyan, magenta, cyan);
+    background: linear-gradient(90deg, #06b6d4, #a855f7, #06b6d4);
     z-index: 10000;
     width: 0%;
+  }
+  .dark .scroll-progress {
+    background: linear-gradient(90deg, cyan, magenta, cyan);
   }
   
   /* Glassmorphism utility */
   .glass {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 24px;
+    transition: background-color 0.5s ease, border-color 0.5s ease, backdrop-filter 0.5s ease;
+  }
+  .dark .glass {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .glass-card {
-    background: rgba(10, 10, 20, 0.6);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(6, 182, 212, 0.15);
     border-radius: 24px;
-    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+  }
+  .glass-card:hover {
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 15px 40px -10px rgba(6, 182, 212, 0.15);
   }
   
-  .glass-card:hover {
+  .dark .glass-card {
+    background: rgba(10, 10, 20, 0.6);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: none;
+  }
+  .dark .glass-card:hover {
     border-color: rgba(0, 255, 255, 0.5);
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
   }
   
   /* Gradient text */
   .gradient-text {
-    background: linear-gradient(135deg, #fff, cyan, magenta);
+    background: linear-gradient(135deg, #1A1A1A, #06b6d4, #a855f7);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     animation: shimmer 3s linear infinite;
+    transition: background 0.5s ease;
+  }
+  
+  .dark .gradient-text {
+    background: linear-gradient(135deg, #fff, cyan, magenta);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
   
   @keyframes shimmer {

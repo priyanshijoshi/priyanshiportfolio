@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaPalette, FaUniversity, FaFileInvoiceDollar, FaGraduationCap, FaPaperPlane, FaHome, FaExternalLinkAlt } from 'react-icons/fa';
-import { HiSparkles } from 'react-icons/hi';
 
 const Projects = () => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
@@ -101,7 +100,7 @@ const Projects = () => {
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all cursor-pointer ${
                 filter === cat
                   ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/25'
-                  : 'glass text-white/70 hover:text-white'
+                  : 'glass text-slate-700 dark:text-white/70 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               {cat}
@@ -138,10 +137,10 @@ const Projects = () => {
                   {/* Card Body */}
                   <div className="p-6 flex-1 flex flex-col text-left justify-between">
                     <div>
-                      <h3 className="text-xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                      <h3 className="text-xl font-bold mb-3 text-slate-800 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
                         {project.title}
                       </h3>
-                      <p className="text-white/60 text-sm mb-4 leading-relaxed">
+                      <p className="text-slate-650 dark:text-white/60 text-sm mb-4 leading-relaxed">
                         {project.desc}
                       </p>
                     </div>
@@ -151,7 +150,7 @@ const Projects = () => {
                         {project.tags.map((tag) => (
                           <span 
                             key={tag} 
-                            className="text-xs px-2.5 py-1 rounded-full bg-white/5 text-cyan-400/90 border border-white/5 font-medium"
+                            className="text-xs px-2.5 py-1 rounded-full bg-black/5 dark:bg-white/5 text-cyan-600 dark:text-cyan-400/90 border border-black/5 dark:border-white/5 font-semibold"
                           >
                             {tag}
                           </span>
@@ -171,7 +170,7 @@ const Projects = () => {
                           <span>View Prototype / Case Study</span>
                         </motion.a>
                       ) : (
-                        <div className="w-full py-2.5 rounded-xl bg-white/5 text-white/40 text-xs font-semibold text-center border border-white/5">
+                        <div className="w-full py-2.5 rounded-xl bg-black/5 dark:bg-white/5 text-slate-400 dark:text-white/40 text-xs font-semibold text-center border border-black/5 dark:border-white/5">
                           Offline Campaign Asset
                         </div>
                       )}

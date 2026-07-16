@@ -2,7 +2,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { FaPalette } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 
 const About = () => {
@@ -44,51 +43,44 @@ const About = () => {
                     >
                         <div className="relative aspect-square w-full max-w-sm mx-auto mb-10">
                             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full opacity-20 blur-2xl animate-pulse" />
-                            <div className="relative glass-card p-2 rounded-full overflow-hidden">
+                            <div className="relative glass-card p-2 rounded-full overflow-hidden shadow-lg">
                                 <img
-                                    src="/Image.png"
+                                    src="/assets/profile.png"
                                     alt="Graphic and UI UX Designer"
                                     className="w-full h-full object-cover rounded-full aspect-square"
                                 />
                             </div>
-                            {/* Floating badges */}
-                            <motion.div
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                                className="absolute -top-4 -right-4 glass px-3 py-1 rounded-full text-sm font-semibold"
-                            >
-                                1+ Year Exp
-                            </motion.div>
+                            {/* Floating badge */}
                             <motion.div
                                 animate={{ y: [0, -10, 0] }}
                                 transition={{ duration: 3, repeat: Infinity }}
-                                className="absolute -bottom-4 -left-4 glass px-3 py-1 rounded-full text-sm flex items-center gap-1 font-semibold"
+                                className="absolute -bottom-4 left-1/2 -translate-x-1/2 glass px-4 py-1.5 rounded-full text-sm flex items-center gap-1 font-semibold text-cyan-600 dark:text-cyan-400 shadow-md"
                             >
-                                <HiSparkles className="text-cyan-400" /> 25+ Projects
+                                <HiSparkles className="text-cyan-550 dark:text-cyan-400" /> 25+ Projects
                             </motion.div>
                         </div>
 
                         {/* Education & Languages Cards */}
                         <div className="w-full max-w-sm space-y-4">
-                            <div className="glass-card p-5 relative overflow-hidden">
-                                <h3 className="text-white font-semibold mb-2 flex items-center gap-2">
-                                    <HiSparkles className="text-cyan-400" /> Education
+                            <div className="glass-card p-5 relative overflow-hidden text-left">
+                                <h3 className="text-slate-800 dark:text-white font-bold mb-2 flex items-center gap-2">
+                                    <HiSparkles className="text-cyan-550 dark:text-cyan-400" /> Education
                                 </h3>
-                                <p className="text-white/80 font-medium">Avantika University</p>
-                                <p className="text-white/50 text-sm">Indore, India</p>
-                                <p className="text-cyan-400 text-xs mt-1">Class of 2026</p>
+                                <p className="text-slate-700 dark:text-white/80 font-medium">Avantika University</p>
+                                <p className="text-slate-500 dark:text-white/50 text-sm">Indore, India</p>
+                                <p className="text-cyan-600 dark:text-cyan-400 text-xs mt-1 font-mono">Class of 2026</p>
                             </div>
 
-                            <div className="glass-card p-5 relative overflow-hidden">
-                                <h3 className="text-white font-semibold mb-2 flex items-center gap-2">
-                                    <HiSparkles className="text-cyan-400" /> Languages
+                            <div className="glass-card p-5 relative overflow-hidden text-left">
+                                <h3 className="text-slate-800 dark:text-white font-bold mb-2 flex items-center gap-2">
+                                    <HiSparkles className="text-cyan-550 dark:text-cyan-400" /> Languages
                                 </h3>
-                                <div className="flex gap-4 text-sm text-white/80">
+                                <div className="flex gap-4 text-sm text-slate-700 dark:text-white/80">
                                     <div>
-                                        <span className="font-semibold text-cyan-400">Hindi:</span> Native
+                                        <span className="font-semibold text-cyan-600 dark:text-cyan-400">Hindi:</span> Native
                                     </div>
                                     <div>
-                                        <span className="font-semibold text-cyan-400">English:</span> Professional
+                                        <span className="font-semibold text-cyan-600 dark:text-cyan-400">English:</span> Professional
                                     </div>
                                 </div>
                             </div>
@@ -100,18 +92,19 @@ const About = () => {
                         initial={{ opacity: 0, x: 50 }}
                         animate={inView ? { opacity: 1, x: 0 } : {}}
                         transition={{ duration: 0.6, delay: 0.3 }}
+                        className="text-left"
                     >
-                        <p className="text-white/80 text-lg leading-relaxed mb-6">
+                        <p className="text-slate-700 dark:text-white/80 text-lg leading-relaxed mb-6 font-medium">
                             Graphic Designer and UI/UX Designer with hands-on experience across the full UX process (user research, wireframing, prototyping, usability testing) and 1+ year of experience creating brand and social media graphics.
                         </p>
 
-                        <p className="text-white/60 mb-8">
+                        <p className="text-slate-500 dark:text-white/60 mb-8 leading-relaxed">
                             Currently designing product interfaces in Figma, building design systems, and leading a 20-member design team at Athenura, while delivering freelance graphic campaigns across fashion, tech, real estate, and travel industries.
                         </p>
 
                         {/* Skills with animated bars */}
                         <div className="space-y-4">
-                            <h3 className="text-white font-semibold mb-3">Software Skills</h3>
+                            <h3 className="text-slate-800 dark:text-white font-bold mb-3">Software Skills</h3>
                             {skills.map((skill, idx) => (
                                 <motion.div
                                     key={skill.name}
@@ -120,10 +113,10 @@ const About = () => {
                                     transition={{ delay: 0.4 + idx * 0.1 }}
                                 >
                                     <div className="flex justify-between mb-1">
-                                        <span className="text-white/80">{skill.name}</span>
-                                        <span className="text-cyan-400">{skill.level}%</span>
+                                        <span className="text-slate-700 dark:text-white/80 font-medium">{skill.name}</span>
+                                        <span className="text-cyan-600 dark:text-cyan-400 font-bold font-mono">{skill.level}%</span>
                                     </div>
-                                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                                    <div className="h-2 bg-black/5 dark:bg-white/10 rounded-full overflow-hidden">
                                         <motion.div
                                             initial={{ width: 0 }}
                                             animate={inView ? { width: `${skill.level}%` } : {}}
@@ -137,7 +130,7 @@ const About = () => {
 
                         {/* Design Expertise Grid */}
                         <div className="mt-8">
-                            <h3 className="text-white font-semibold mb-3">Design Expertise</h3>
+                            <h3 className="text-slate-800 dark:text-white font-bold mb-3">Design Expertise</h3>
                             <div className="flex flex-wrap gap-2">
                                 {designExpertise.map((exp, idx) => (
                                     <motion.span
@@ -145,8 +138,8 @@ const About = () => {
                                         initial={{ opacity: 0, scale: 0 }}
                                         animate={inView ? { opacity: 1, scale: 1 } : {}}
                                         transition={{ delay: 0.8 + idx * 0.05 }}
-                                        whileHover={{ scale: 1.05, backgroundColor: "rgba(0,255,255,0.2)" }}
-                                        className="px-3 py-1 rounded-full glass text-sm text-cyan-400 cursor-pointer"
+                                        whileHover={{ scale: 1.05, backgroundColor: "rgba(6,182,212,0.15)" }}
+                                        className="px-3.5 py-1.5 rounded-full glass text-sm font-semibold text-cyan-600 dark:text-cyan-400 cursor-pointer border border-black/5 dark:border-white/5"
                                     >
                                         {exp}
                                     </motion.span>
@@ -156,7 +149,7 @@ const About = () => {
 
                         {/* Soft Skills Grid */}
                         <div className="mt-8">
-                            <h3 className="text-white font-semibold mb-3">Soft Skills</h3>
+                            <h3 className="text-slate-800 dark:text-white font-bold mb-3">Soft Skills</h3>
                             <div className="flex flex-wrap gap-2">
                                 {softSkills.map((skill, idx) => (
                                     <motion.span
@@ -164,8 +157,8 @@ const About = () => {
                                         initial={{ opacity: 0, scale: 0 }}
                                         animate={inView ? { opacity: 1, scale: 1 } : {}}
                                         transition={{ delay: 0.9 + idx * 0.05 }}
-                                        whileHover={{ scale: 1.05, backgroundColor: "rgba(168,85,247,0.2)" }}
-                                        className="px-3 py-1 rounded-full glass text-sm text-purple-400 cursor-pointer"
+                                        whileHover={{ scale: 1.05, backgroundColor: "rgba(168,85,247,0.15)" }}
+                                        className="px-3.5 py-1.5 rounded-full glass text-sm font-semibold text-purple-600 dark:text-purple-400 cursor-pointer border border-black/5 dark:border-white/5"
                                     >
                                         {skill}
                                     </motion.span>

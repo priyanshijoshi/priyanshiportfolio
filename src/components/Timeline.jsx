@@ -95,10 +95,10 @@ const Timeline = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setFilter(btn.id)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all cursor-pointer ${
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all cursor-pointer ${
                 filter === btn.id
                   ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/25'
-                  : 'glass text-white/70 hover:text-white'
+                  : 'glass text-slate-700 dark:text-white/70 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               {btn.label}
@@ -137,18 +137,18 @@ const Timeline = () => {
                 >
                   <div className={`absolute inset-0 bg-gradient-to-r ${exp.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
                   <div className="relative z-10">
-                    <h3 className="text-xl font-bold text-white mb-1">{exp.role}</h3>
-                    <p className="text-cyan-400 text-sm mb-2">{exp.company}</p>
-                    <span className="inline-block text-xs px-2.5 py-1 rounded-full glass text-white/60 mb-4 font-mono">
+                    <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-1">{exp.role}</h3>
+                    <p className="text-cyan-600 dark:text-cyan-400 text-sm mb-2 font-semibold">{exp.company}</p>
+                    <span className="inline-block text-xs px-2.5 py-1 rounded-full glass text-slate-500 dark:text-white/60 mb-4 font-mono font-semibold border border-black/5 dark:border-white/5">
                       {exp.duration}
                     </span>
 
                     <div className="space-y-4 text-left">
                       {exp.achievementsGrouped.map((group, groupIdx) => (
-                        <div key={groupIdx} className="border-l border-white/10 pl-3">
+                        <div key={groupIdx} className="border-l border-black/10 dark:border-white/10 pl-3">
                           <h4 className={`text-xs font-bold tracking-wider uppercase mb-1.5 ${
-                            group.groupName.includes('UI/UX') ? 'text-cyan-400' :
-                            group.groupName.includes('Graphic') ? 'text-purple-400' : 'text-pink-400'
+                            group.groupName.includes('UI/UX') ? 'text-cyan-600 dark:text-cyan-400' :
+                            group.groupName.includes('Graphic') ? 'text-purple-600 dark:text-purple-400' : 'text-pink-600 dark:text-pink-400'
                           }`}>
                             {group.groupName}
                           </h4>
@@ -159,9 +159,9 @@ const Timeline = () => {
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={inView ? { opacity: 1, x: 0 } : {}}
                                 transition={{ delay: idx * 0.2 + 0.4 + groupIdx * 0.1 + itemIdx * 0.05 }}
-                                className="text-white/70 text-sm flex items-start gap-2 leading-relaxed"
+                                className="text-slate-650 dark:text-white/70 text-sm flex items-start gap-2 leading-relaxed"
                               >
-                                <HiSparkles className="text-cyan-400/70 mt-1 flex-shrink-0 text-[10px]" />
+                                <HiSparkles className="text-cyan-600 dark:text-cyan-400/70 mt-1 flex-shrink-0 text-[10px]" />
                                 <span>{item}</span>
                               </motion.li>
                             ))}
