@@ -43,7 +43,7 @@ const Hero = () => {
             className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
         >
             {/* Animated Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-purple-100/10 to-cyan-100/10 dark:from-[#0B0F19] dark:via-purple-900/20 dark:to-cyan-900/20 animate-gradient" />
+            <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/20 to-cyan-900/20 animate-gradient" />
 
             <div className="relative z-10 max-w-7xl mx-auto px-6">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -63,11 +63,11 @@ const Hero = () => {
                             <motion.div
                                 animate={{ scale: [1, 1.05, 1] }}
                                 transition={{ duration: 3, repeat: Infinity }}
-                                className="mb-6 text-cyan-600 dark:text-cyan-400 font-mono text-sm tracking-wider flex items-center gap-2 justify-center lg:justify-start"
+                                className="mb-6 text-cyan-400 font-mono text-sm tracking-wider flex items-center gap-2 justify-center lg:justify-start"
                             >
-                                <HiSparkles />
+                                <HiSparkles className="text-cyan-400" />
                                 UI/UX DESIGNER
-                                <HiSparkles />
+                                <HiSparkles className="text-cyan-400" />
                             </motion.div>
 
                             <motion.h1
@@ -85,7 +85,7 @@ const Hero = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 transition={{ delay: 0.5 }}
-                                className="text-xl text-slate-600 dark:text-white/70 max-w-2xl mb-10 leading-relaxed"
+                                className="text-xl text-white/70 max-w-2xl mb-10 leading-relaxed"
                             >
                                 UI/UX Designer and Graphic Designer with hands-on experience across the full UX process (user research, wireframing, prototyping, usability testing). Currently designing product interfaces in Figma, building design systems, and leading a 20-member design team at Athenura, while also bringing 1+ year of experience delivering freelance graphic campaigns.
                             </motion.p>
@@ -98,9 +98,9 @@ const Hero = () => {
                             >
                                 <motion.a
                                     href="#projects"
-                                    whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(6,182,212,0.4)" }}
+                                    whileHover={{ scale: 1.05, boxShadow: "0 0 20px cyan" }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-md shadow-cyan-550/20"
+                                    className="px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold"
                                 >
                                     View Projects
                                 </motion.a>
@@ -108,7 +108,7 @@ const Hero = () => {
                                     href="#contact"
                                     whileHover={{ scale: 1.05 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className="px-8 py-3 rounded-full border border-cyan-500/50 text-cyan-600 dark:text-cyan-400 font-semibold backdrop-blur-sm"
+                                    className="px-8 py-3 rounded-full border border-cyan-500/50 text-cyan-400 font-semibold backdrop-blur-sm"
                                 >
                                     Let's Talk
                                 </motion.a>
@@ -134,15 +134,19 @@ const Hero = () => {
                                     padding: '3px',
                                 }}
                             />
-                            <div className="absolute inset-[-10px] rounded-full bg-[#F8F9FA] dark:bg-[#0B0F19] transition-colors duration-500" />
+                            <div className="absolute inset-[-10px] rounded-full bg-black" />
 
                             {/* Outer glow */}
                             <div className="absolute inset-[-40px] bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-full blur-2xl animate-pulse" />
 
                             {/* Profile image */}
-                            <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10 shadow-lg dark:shadow-none">
+                            <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/10">
                                 <img
-                                    src="/assets/profile.png"
+                                    src="/profile.png"
+                                    onError={(e) => {
+                                        e.target.onerror = null;
+                                        e.target.src = "/profile.jpeg";
+                                    }}
                                     alt="UI/UX Designer Profile"
                                     className="w-full h-full object-cover"
                                 />
@@ -152,7 +156,7 @@ const Hero = () => {
                             <motion.div
                                 animate={{ y: [0, -8, 0] }}
                                 transition={{ duration: 3, repeat: Infinity }}
-                                className="absolute -bottom-2 left-1/2 -translate-x-1/2 glass px-4 py-2 rounded-full text-sm text-cyan-600 dark:text-cyan-400 font-semibold whitespace-nowrap shadow-md"
+                                className="absolute -bottom-2 left-1/2 -translate-x-1/2 glass px-4 py-2 rounded-full text-sm text-cyan-400 font-medium whitespace-nowrap"
                             >
                                 <span className="inline-block w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
                                 Available for hire
@@ -190,10 +194,10 @@ const Hero = () => {
                     animate={{ y: [0, -20, 0], rotate: [0, 3, 0] }}
                     transition={{ duration: 5, repeat: Infinity }}
                 >
-                    <div className="glass-card p-3 w-48 shadow-md">
+                    <div className="glass-card p-3 w-48">
                         <div className="bg-gradient-to-br from-purple-500 to-pink-500 h-32 rounded-lg mb-2" />
-                        <div className="h-2 bg-black/10 dark:bg-white/20 rounded w-3/4 mb-1" />
-                        <div className="h-2 bg-black/5 dark:bg-white/10 rounded w-1/2" />
+                        <div className="h-2 bg-white/20 rounded w-3/4 mb-1" />
+                        <div className="h-2 bg-white/10 rounded w-1/2" />
                     </div>
                 </motion.div>
 
@@ -202,15 +206,15 @@ const Hero = () => {
                     animate={{ y: [0, -30, 0], rotate: [0, -3, 0] }}
                     transition={{ duration: 6, repeat: Infinity, delay: 1 }}
                 >
-                    <div className="glass-card p-3 w-56 shadow-md">
+                    <div className="glass-card p-3 w-56">
                         <div className="flex gap-2 mb-3">
                             <div className="w-8 h-8 rounded-full bg-cyan-500" />
                             <div className="flex-1">
-                                <div className="h-2 bg-black/10 dark:bg-white/20 rounded w-full mb-1" />
-                                <div className="h-2 bg-black/5 dark:bg-white/10 rounded w-3/4" />
+                                <div className="h-2 bg-white/20 rounded w-full mb-1" />
+                                <div className="h-2 bg-white/10 rounded w-3/4" />
                             </div>
                         </div>
-                        <div className="bg-black/5 dark:bg-white/5 rounded-lg p-2">
+                        <div className="bg-white/5 rounded-lg p-2">
                             <div className="h-20 bg-gradient-to-r from-cyan-500/30 to-purple-500/30 rounded" />
                         </div>
                     </div>

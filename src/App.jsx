@@ -12,9 +12,6 @@ import LoadingScreen from './components/LoadingScreen';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('theme') || 'dark';
-  });
   const { scrollYProgress } = useScroll();
   const scrollProgress = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const cursorRef = useRef(null);
@@ -23,18 +20,6 @@ function App() {
   useEffect(() => {
     setTimeout(() => setLoading(false), 2500);
   }, []);
-
-  useEffect(() => {
-    const root = window.document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-      root.classList.remove('light');
-    } else {
-      root.classList.add('light');
-      root.classList.remove('dark');
-    }
-    localStorage.setItem('theme', theme);
-  }, [theme]);
 
   // Custom cursor logic
   useEffect(() => {
@@ -79,7 +64,7 @@ function App() {
       
       <div className="relative bg-black">
         <ParticlesBackground />
-        <Navbar theme={theme} setTheme={setTheme} />
+        <Navbar />
         
         {/* Scroll Progress Bar */}
         <motion.div

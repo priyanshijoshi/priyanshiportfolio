@@ -47,7 +47,7 @@ ${formData.message}`;
     { icon: <FaLinkedinIn />, href: 'https://www.linkedin.com/in/priyanshi-joshiwes/', label: 'LinkedIn' },
   ];
 
-  const inputClass = "w-full px-4 py-3 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 text-slate-800 dark:text-white placeholder-slate-400 dark:placeholder-white/30 focus:outline-none focus:border-cyan-500/50 transition-all duration-300";
+  const inputClass = "w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-cyan-500/50 transition-all duration-300";
 
   return (
     <section id="contact" className="py-28 px-6 relative overflow-hidden">
@@ -57,7 +57,7 @@ ${formData.message}`;
         <motion.div ref={ref} initial={{ opacity: 0, y: 50 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4"><span className="gradient-text">Get In Touch</span></h2>
           <div className="w-20 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 mx-auto rounded-full mb-4" />
-          <p className="text-slate-600 dark:text-white/60 max-w-lg mx-auto">Have a project in mind? Drop me a message and let's create something amazing together.</p>
+          <p className="text-white/60 max-w-lg mx-auto">Have a project in mind? Drop me a message and let's create something amazing together.</p>
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12">
@@ -66,20 +66,20 @@ ${formData.message}`;
             <div className="space-y-6">
               {contactInfo.map((item, idx) => (
                 <motion.a key={item.label} href={item.href} initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.3 + idx * 0.1 }} whileHover={{ x: 5 }} className="flex items-center gap-4 group cursor-pointer">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-black/10 dark:border-white/10 flex items-center justify-center text-cyan-600 dark:text-cyan-400 group-hover:border-cyan-500/50 transition-colors text-lg">{item.icon}</div>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:border-cyan-500/50 transition-colors text-lg">{item.icon}</div>
                   <div>
-                    <p className="text-slate-500 dark:text-white/40 text-xs uppercase tracking-wider font-semibold">{item.label}</p>
-                    <p className="text-slate-700 dark:text-white/80 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors font-medium">{item.value}</p>
+                    <p className="text-white/40 text-xs uppercase tracking-wider font-semibold">{item.label}</p>
+                    <p className="text-white/80 group-hover:text-cyan-400 transition-colors font-medium">{item.value}</p>
                   </div>
                 </motion.a>
               ))}
             </div>
 
             <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.6 }}>
-              <p className="text-slate-500 dark:text-white/40 text-sm uppercase tracking-wider mb-4 font-semibold">Follow Me</p>
+              <p className="text-white/40 text-sm uppercase tracking-wider mb-4 font-semibold">Follow Me</p>
               <div className="flex gap-3">
                 {socials.map((social) => (
-                  <motion.a key={social.label} href={social.href} aria-label={social.label} whileHover={{ scale: 1.1, y: -3 }} whileTap={{ scale: 0.95 }} className="w-11 h-11 rounded-xl glass flex items-center justify-center text-slate-500 dark:text-white/60 hover:text-cyan-600 dark:hover:text-cyan-400 hover:border-cyan-500/50 transition-all text-lg border border-black/5 dark:border-white/5">{social.icon}</motion.a>
+                  <motion.a key={social.label} href={social.href} aria-label={social.label} whileHover={{ scale: 1.1, y: -3 }} whileTap={{ scale: 0.95 }} className="w-11 h-11 rounded-xl glass flex items-center justify-center text-white/60 hover:text-cyan-400 hover:border-cyan-500/50 transition-all text-lg border border-white/5">{social.icon}</motion.a>
                 ))}
               </div>
             </motion.div>
@@ -87,8 +87,8 @@ ${formData.message}`;
             <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.7 }} className="glass-card p-6 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5" />
               <div className="relative z-10">
-                <p className="text-slate-800 dark:text-white/80 text-lg font-bold mb-2">Let's work together!</p>
-                <p className="text-slate-500 dark:text-white/50 text-sm leading-relaxed">I'm currently available for freelance projects and full-time positions.</p>
+                <p className="text-white/80 text-lg font-bold mb-2">Let's work together!</p>
+                <p className="text-white/50 text-sm leading-relaxed">I'm currently available for freelance projects and full-time positions.</p>
               </div>
             </motion.div>
           </motion.div>
@@ -98,20 +98,20 @@ ${formData.message}`;
             <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6 text-left">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="contact-name" className="block text-slate-500 dark:text-white/50 text-sm mb-2 font-semibold">Your Name</label>
+                  <label htmlFor="contact-name" className="block text-white/50 text-sm mb-2 font-semibold">Your Name</label>
                   <input id="contact-name" type="text" name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe" className={inputClass} />
                 </div>
                 <div>
-                  <label htmlFor="contact-email" className="block text-slate-500 dark:text-white/50 text-sm mb-2 font-semibold">Your Email</label>
+                  <label htmlFor="contact-email" className="block text-white/50 text-sm mb-2 font-semibold">Your Email</label>
                   <input id="contact-email" type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" className={inputClass} />
                 </div>
               </div>
               <div>
-                <label htmlFor="contact-subject" className="block text-slate-500 dark:text-white/50 text-sm mb-2 font-semibold">Subject</label>
+                <label htmlFor="contact-subject" className="block text-white/50 text-sm mb-2 font-semibold">Subject</label>
                 <input id="contact-subject" type="text" name="subject" value={formData.subject} onChange={handleChange} required placeholder="Project Inquiry" className={inputClass} />
               </div>
               <div>
-                <label htmlFor="contact-message" className="block text-slate-500 dark:text-white/50 text-sm mb-2 font-semibold">Message</label>
+                <label htmlFor="contact-message" className="block text-white/50 text-sm mb-2 font-semibold">Message</label>
                 <textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} required rows="5" placeholder="Tell me about your project..." className={`${inputClass} resize-none`} />
               </div>
 
@@ -120,12 +120,12 @@ ${formData.message}`;
               </motion.button>
 
               {status === 'success' && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 text-green-600 dark:text-green-400 text-sm bg-green-500/10 px-4 py-3 rounded-xl border border-green-500/20">
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 text-green-400 text-sm bg-green-500/10 px-4 py-3 rounded-xl border border-green-500/20">
                   <FiCheckCircle className="text-lg" />Message sent successfully!
                 </motion.div>
               )}
               {status === 'error' && (
-                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 text-red-600 dark:text-red-400 text-sm bg-red-500/10 px-4 py-3 rounded-xl border border-red-500/20">
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="flex items-center gap-2 text-red-400 text-sm bg-red-500/10 px-4 py-3 rounded-xl border border-red-500/20">
                   <FiAlertCircle className="text-lg" />Something went wrong. Please try again.
                 </motion.div>
               )}
