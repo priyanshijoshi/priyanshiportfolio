@@ -129,14 +129,6 @@ const Projects = () => {
       live: 'https://www.figma.com/proto/daGz0qZHR70oDbTgkQ4moQ/UX-Cp?node-id=1-3&p=f&t=AMyet58fFQkewFH2-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A3',
     },
     {
-      title: 'Complete Billing System UI',
-      desc: 'Researched, wireframed, prototyped, and tested a billing interface for invoice management and transaction tracking.',
-      tags: ['Billing System', 'UI/UX', 'Figma', 'Prototyping'],
-      color: 'from-purple-500 to-indigo-500',
-      icon: <FaFileInvoiceDollar />,
-      live: 'https://www.figma.com/design/evLXMqXuHG3mUjqIpTmfXp/Untitled?node-id=0-1&p=f&t=utKTYICpQnSqsTMo-0',
-    },
-    {
       title: 'Digital Learning Platform UI',
       desc: 'Designed and tested an e-learning platform interface focused on intuitive navigation.',
       tags: ['E-Learning', 'UI/UX', 'Figma', 'Usability Testing'],
