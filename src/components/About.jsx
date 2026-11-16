@@ -10,11 +10,12 @@ const About = () => {
     const skills = [
         { name: 'Figma', level: 95, color: 'from-purple-500 to-pink-500' },
         { name: 'Canva', level: 95, color: 'from-cyan-500 to-teal-500' },
-        { name: 'Photoshop', level: 80, color: 'from-blue-500 to-cyan-500' },
-        { name: 'Adobe XD', level: 70, color: 'from-pink-500 to-orange-500' },
+        { name: 'Photoshop', level: 70, color: 'from-blue-500 to-cyan-500' },
+        { name: 'illustrator', level: 50, color: 'from-blue-500 to-cyan-500' },
+        { name: 'After Effect', level: 50, color: 'from-pink-500 to-orange-500' },
     ];
 
-    const designExpertise = ['Branding', 'Typography', 'Layout Design', 'UI/UX Design', 'Print Design', 'Motion Graphics (learning)'];
+    const designExpertise = ['Branding','Social Media handling','Typography', 'Layout Design', 'UI/UX Design', 'Print Design', 'Motion Graphics (learning)'];
     const softSkills = ['Communication', 'Collaboration', 'Time Management', 'Team Leadership'];
 
     return (
